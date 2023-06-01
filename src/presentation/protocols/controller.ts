@@ -1,5 +1,5 @@
 import { type HttpRequest, type HttpResponse } from './http'
 
 export interface Controller {
-  handle: (httpReq: HttpRequest) => HttpResponse
+  handle: (httpReq: HttpRequest) => Promise<HttpResponse>
 }
