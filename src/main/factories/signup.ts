@@ -6,10 +6,10 @@ import { EmailValidatorAdapter } from '../../utils/email-validator-adapter'
 
 export const makeSignUpController = (): SignUpController => {
   const salt = 12
-  const emailValidorAdapter = new EmailValidatorAdapter()
+  const emailValidatorAdapter = new EmailValidatorAdapter()
   const bcryptAdapter = new BcryptAdapter(salt)
   const accountMongoRepository = new AccountMongoRepository()
   const dbAddAccount = new DbAddAccount(bcryptAdapter, accountMongoRepository)
 
-  return new SignUpController(emailValidorAdapter, dbAddAccount)
+  return new SignUpController(emailValidatorAdapter, dbAddAccount)
 }
