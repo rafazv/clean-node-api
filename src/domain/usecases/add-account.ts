@@ -1,4 +1,4 @@
-import { type AccountModel } from '../models/account'
+/* eslint-disable @typescript-eslint/consistent-type-definitions */
 
 export interface AddAccountModel {
   name: string
@@ -7,5 +7,15 @@ export interface AddAccountModel {
 }
 
 export interface AddAccount {
-  add: (account: AddAccountModel) => Promise<AccountModel>
+  add: (account: AddAccount.Params) => Promise<AddAccount.Result>
+}
+
+export namespace AddAccount {
+  export type Params = {
+    name: string
+    email: string
+    password: string
+  }
+
+  export type Result = boolean
 }
