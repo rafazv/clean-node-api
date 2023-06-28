@@ -4,6 +4,7 @@ import { type Controller, type HttpRequest, type HttpResponse } from '../../prot
 
 export class LoginController implements Controller {
   async handle (httpReq: HttpRequest): Promise<HttpResponse> {
-    return badRequest(new MissingParamError('email'))
+    if (!httpReq.body.email) return await new Promise(resolve => { resolve(badRequest(new MissingParamError('email'))) })
+    if (!httpReq.body.password) return await new Promise(resolve => { resolve(badRequest(new MissingParamError('password'))) })
   }
 }
