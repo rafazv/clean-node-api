@@ -10,7 +10,7 @@ describe('Mongo Helper', () => {
   })
 
   test('Should reconnect if mongodb is down', async () => {
-    const accountCollection = await sut.getConnection('accounts')
+    const accountCollection = await sut.getCollection('accounts')
     expect(accountCollection).toBeTruthy()
   })
 })
