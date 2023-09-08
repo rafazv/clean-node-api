@@ -1,10 +1,10 @@
+import { type LoadAccountByEmailRepository } from '../../protocols/db/account/load-account-by-email-repository'
+import { type UpdateAccessTokenRepository } from '../../protocols/db/account/update-access-token-repository'
 import { DbAuthentication } from './db-authentication'
 import {
   type AuthenticationModel,
   type HashComparer,
   type Encrypter,
-  type LoadAccountByEmailRepository,
-  type UpdateAccessTokenRepository,
   type AccountModel
 } from './db-authentication-protocols'
 

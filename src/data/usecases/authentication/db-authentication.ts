@@ -2,10 +2,10 @@ import {
   type Authentication,
   type AuthenticationModel,
   type HashComparer,
-  type Encrypter,
-  type LoadAccountByEmailRepository,
-  type UpdateAccessTokenRepository
+  type Encrypter
 } from './db-authentication-protocols'
+import { type LoadAccountByEmailRepository } from '../../protocols/db/account/load-account-by-email-repository'
+import { type UpdateAccessTokenRepository } from '../../protocols/db/account/update-access-token-repository'
 
 export class DbAuthentication implements Authentication {
   private readonly loadAccountByEmailRepository: LoadAccountByEmailRepository
